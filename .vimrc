@@ -1,4 +1,4 @@
-" Last Modified: 2025-06-04 08:11:27
+" Last Modified: 2025-12-17 10:19:46
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -34,6 +34,7 @@ if has("multi_byte")
     set encoding=utf-8
     set fileencodings=ucs-bom,utf-8,latin1
 endif
+"set tabline=%!MyTabLine()
 set nocompatible
 set list listchars=tab:¤\ ,trail:·,extends:»,precedes:«
 set expandtab
@@ -44,7 +45,7 @@ set title
 set statusline=%F%m%r%h%w\ \(%{&ff}\)\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 set shiftwidth=4
-set cmdheight=2
+set cmdheight=1
 set nowrap
 set sidescroll=5
 set so=5
@@ -79,7 +80,29 @@ if has('persistent_undo')
     set undodir=~/.vim/undo/ " Store undofiles in a tmp dir
 endif
 
-" Enable true-color support
+" Override the default tab tile colors so that window count is readable
+function! s:gruvbox_material_custom() abort
+  " Initialize the color palette.
+  " The first parameter is a valid value for `g:gruvbox_material_background`,
+  " the second parameter is a valid value for `g:gruvbox_material_foreground`,
+  " and the third parameter is a valid value for `g:gruvbox_material_colors_override`.
+  let l:palette = gruvbox_material#get_palette('medium', 'material', {})
+  " Define a highlight group.
+  " The first parameter is the name of a highlight group,
+  " the second parameter is the foreground color,
+  " the third parameter is the background color,
+  " the fourth parameter is for UI highlighting which is optional,
+  " and the last parameter is for `guisp` which is also optional.
+  " See `autoload/gruvbox_material.vim` for the format of `l:palette`.
+  call gruvbox_material#highlight('Title', l:palette.none, l:palette.none, 'bold')
+endfunction
+
+augroup GruvboxMaterialCustom
+  autocmd!
+  autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
+augroup END
+
+let g:gruvbox_material_background = 'medium'
 colo gruvbox-material
 
 " << Mappings >>
@@ -159,6 +182,7 @@ endif
 
 " Set the cursor to match the same behaviour as GVim from within Mac Terminal
 if $TERM_PROGRAM =~ "Apple_Terminal"
+    set termguicolors
     let &t_SI.="\e[6 q"
     let &t_SR.="\e[4 q"
     let &t_EI.="\e[2 q"
