@@ -1,4 +1,4 @@
-" Last Modified: 2025-12-17 10:19:46
+" Last Modified: 2026-01-27 08:25:36
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -97,13 +97,14 @@ function! s:gruvbox_material_custom() abort
   call gruvbox_material#highlight('Title', l:palette.none, l:palette.none, 'bold')
 endfunction
 
-augroup GruvboxMaterialCustom
-  autocmd!
-  autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
-augroup END
+"augroup GruvboxMaterialCustom
+"  autocmd!
+"  autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
+"augroup END
 
-let g:gruvbox_material_background = 'medium'
-colo gruvbox-material
+"let g:gruvbox_material_background = 'medium'
+"colo gruvbox-material
+colo retrobox
 
 " << Mappings >>
 " Break undo cycle
