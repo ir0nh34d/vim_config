@@ -1,4 +1,4 @@
-" Last Modified: 2026-03-04 12:28:30
+" Last Modified: 2026-03-04 15:06:40
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -34,7 +34,6 @@ if has("multi_byte")
     set encoding=utf-8
     set fileencodings=ucs-bom,utf-8,latin1
 endif
-"set tabline=%!MyTabLine()
 set nocompatible
 set list listchars=tab:¤\ ,trail:·,extends:»,precedes:«
 set expandtab
