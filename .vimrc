@@ -1,4 +1,4 @@
-" Last Modified: 2026-01-27 08:25:36
+" Last Modified: 2026-03-04 12:28:30
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -51,7 +51,10 @@ set sidescroll=5
 set so=5
 set history=50
 set ruler
-set showcmd
+" set noshowcmd to hide the "~@<letter>" from showing up in the bottom line
+" while scrolling.  Not sure if this will cause other behaviour, need to keep
+" and eye open for it.
+set noshowcmd
 set incsearch
 set hlsearch
 set backspace=indent,eol,start
