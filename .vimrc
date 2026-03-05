@@ -1,4 +1,4 @@
-" Last Modified: 2026-03-04 15:06:40
+" Last Modified: 2026-03-05 08:55:07
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -178,9 +178,9 @@ endif
 " Set the cursor to match the same behaviour as GVim from within iTerm2
 if $TERM_PROGRAM =~ "iTerm.app"
     set termguicolors
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    let &t_SI = "\e]50;CursorShape=1\x7"
+    let &t_SR = "\e]50;CursorShape=2\x7"
+    let &t_EI = "\e]50;CursorShape=0\x7"
 endif
 
 " Set the cursor to match the same behaviour as GVim from within Mac Terminal
