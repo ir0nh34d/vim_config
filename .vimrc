@@ -1,4 +1,4 @@
-" Last Modified: 2026-03-05 08:55:07
+" Last Modified: 2026-04-07 15:20:46
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -41,11 +41,17 @@ set tabstop=2
 set nobk
 set nu
 set title
+
+" enable line wrapping
+set wrap
+set linebreak
+set breakindent
+set showbreak=↪\
+
 set statusline=%F%m%r%h%w\ \(%{&ff}\)\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 set shiftwidth=4
 set cmdheight=1
-set nowrap
 set sidescroll=5
 set so=5
 set history=50
