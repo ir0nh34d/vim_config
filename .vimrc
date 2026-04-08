@@ -1,4 +1,4 @@
-" Last Modified: 2026-04-07 15:20:46
+" Last Modified: 2026-04-08 08:31:46
 scriptencoding utf-8
 
 " Enable syntax highlighting
@@ -143,10 +143,10 @@ nnoremap <leader>y :echo synIDattr(synID(line("."), col("."), 1), "name")<CR>
 nnoremap <leader>x :%!xxd<CR>
 
 nnoremap <silent> <leader>g :call Grep(expand("<cword>"), "%:p")<CR>
-vnoremap <Up> k
-vnoremap <Down> j
-vnoremap <Left> h
-vnoremap <Right> l
+nnoremap <Up> gk
+nnoremap <Down> gj
+nnoremap <Left> h
+nnoremap <Right> l
 
 " << Commands >>
 com! -nargs=+ Grep :call Grep(<f-args>)
